@@ -10,9 +10,14 @@
   "lang": "en-IN",
   "icons": [
     {
-      "src": "favicon/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "favicon/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon/favicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
