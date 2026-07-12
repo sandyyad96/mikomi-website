@@ -1,0 +1,19 @@
+{
+  "name": "Mikomi Japanese Language Institute",
+  "short_name": "Mikomi",
+  "description": "Live online JLPT N5, N4, N3 & N2 Japanese language classes with Astha Sensei.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#E60012",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

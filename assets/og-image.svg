@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fff1f2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1000" cy="150" r="150" fill="#E60012" opacity="0.92"/>
+  <g transform="translate(90,150)">
+    <rect x="0" y="0" width="70" height="70" rx="18" fill="#E60012"/>
+    <text x="35" y="50" font-family="serif" font-size="40" fill="#fff" text-anchor="middle">こ</text>
+  </g>
+  <text x="90" y="330" font-family="'Poppins',sans-serif" font-weight="800" font-size="72" fill="#14110f">Learn Japanese with Confidence.</text>
+  <text x="90" y="400" font-family="'Poppins',sans-serif" font-weight="500" font-size="34" fill="#6b6763">Live Online JLPT N5 · N4 · N3 · N2 Classes</text>
+  <text x="90" y="470" font-family="'Poppins',sans-serif" font-weight="600" font-size="30" fill="#E60012">Mikomi Japanese Language Institute · with Astha Sensei</text>
+</svg>
