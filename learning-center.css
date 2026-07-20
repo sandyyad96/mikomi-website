@@ -231,6 +231,18 @@
   text-align: center; margin-top: .9rem; line-height: 1.5;
 }
 
+/* Inline save status inside the download modal (success / error) */
+.lc-modal-status {
+  display: none;
+  font-size: .85rem; font-weight: 500;
+  text-align: center; line-height: 1.4;
+  padding: .7rem .9rem; margin-bottom: 1rem;
+  border-radius: var(--radius-sm);
+}
+.lc-modal-status.show { display: block; }
+.lc-modal-status.is-success { color: #1a7f37; background: #eafaf0; }
+.lc-modal-status.is-error { color: var(--red-dark); background: var(--red-soft); }
+
 /* Focus visibility for keyboard users (matches brand) */
 :focus-visible { outline: 3px solid rgba(230,0,18,.35); outline-offset: 2px; border-radius: 6px; }
 

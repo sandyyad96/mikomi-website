@@ -280,9 +280,12 @@
       <div class="lc-field">
         <label for="lcEmail">Email <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
         <input type="email" id="lcEmail" name="email" placeholder="you@example.com" autocomplete="email" />
+        <span class="lc-error">Please enter a valid email address.</span>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-block btn-lg">⬇ Download PDF</button>
+      <p class="lc-modal-status" id="lcModalStatus" role="status" aria-live="polite"></p>
+
+      <button type="submit" class="btn btn-primary btn-block btn-lg" id="lcSubmitBtn">Get Free Access</button>
       <p class="lc-modal-note">Your details stay with Mikomi. We may message you on WhatsApp about your Japanese learning journey.</p>
     </form>
   </div>
@@ -308,6 +311,8 @@
 
   <!-- Shared behaviour first, page behaviour second -->
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="supabase-service.js"></script>
   <script src="learning-center.js"></script>
 </body>
 </html>

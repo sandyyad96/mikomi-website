@@ -102,6 +102,31 @@
     });
   }
 
+  /* ---------- Lead capture (Supabase-backed) ----------
+     Registration is remembered in localStorage so a visitor is
+     only ever asked once per browser. ---------------------- */
+  var LS_REGISTERED = "mikomi_registered";
+  var LS_NAME = "mikomi_name";
+  var LS_WHATSAPP = "mikomi_whatsapp";
+
+  function isRegistered() {
+    return localStorage.getItem(LS_REGISTERED) === "true";
+  }
+
+  /* Accepts 9876543210, +919876543210, 919876543210 (with any
+     spaces/dashes). Returns the canonical 10-digit number, or
+     null when the input isn't a valid Indian mobile number. */
+  function normalizeIndianMobile(raw) {
+    var digits = String(raw || "").replace(/\D/g, "");
+    if (digits.length === 12 && digits.indexOf("91") === 0) digits = digits.slice(2);
+    else if (digits.length === 11 && digits.indexOf("0") === 0) digits = digits.slice(1);
+    return /^[6-9]\d{9}$/.test(digits) ? digits : null;
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
   /* ---------- Render category cards ---------- */
   function renderCategories() {
     var wrap = document.getElementById("lcCategories");
@@ -164,8 +189,22 @@
 
     /* Wire download buttons */
     wrap.querySelectorAll(".lc-dl").forEach(function (b) {
-      b.addEventListener("click", function () { openModal(b.getAttribute("data-id")); });
+      b.addEventListener("click", function () { handleDownloadClick(b.getAttribute("data-id")); });
     });
+  }
+
+  /* Reusable entry point for every download button on the page:
+     returning, registered visitors skip straight to the file;
+     everyone else sees the lead-capture modal first. */
+  function handleDownloadClick(id) {
+    var res = RESOURCES.filter(function (r) { return r.id === id; })[0];
+    if (!res || !res.file) return;
+
+    if (isRegistered()) {
+      startDownload(res);
+    } else {
+      openModal(id);
+    }
   }
 
   /* ---------- Category filtering ---------- */
@@ -215,6 +254,7 @@
     overlay.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
     clearErrors();
+    hideStatus();
     if (lastFocus) lastFocus.focus();
   }
 
@@ -231,6 +271,27 @@
     if (field) field.classList.toggle("has-error", on);
     if (on) input.setAttribute("aria-invalid", "true");
     else input.removeAttribute("aria-invalid");
+  }
+
+  function showStatus(type, msg) {
+    var status = document.getElementById("lcModalStatus");
+    if (!status) return;
+    status.textContent = msg;
+    status.className = "lc-modal-status show " + (type === "error" ? "is-error" : "is-success");
+  }
+
+  function hideStatus() {
+    var status = document.getElementById("lcModalStatus");
+    if (!status) return;
+    status.textContent = "";
+    status.className = "lc-modal-status";
+  }
+
+  function setSubmitting(isSubmitting) {
+    var btn = document.getElementById("lcSubmitBtn");
+    if (!btn) return;
+    btn.disabled = isSubmitting;
+    btn.textContent = isSubmitting ? "Saving..." : "Get Free Access";
   }
 
   /* Triggers the actual file download without navigating away */
@@ -261,24 +322,65 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       clearErrors();
+      hideStatus();
 
       var name = document.getElementById("lcName").value.trim();
-      var phone = document.getElementById("lcPhone").value.trim();
+      var phoneRaw = document.getElementById("lcPhone").value.trim();
+      var email = document.getElementById("lcEmail").value.trim();
+      var res = current;
       var ok = true;
 
       if (name.length < 2) { setError("lcName", true); ok = false; }
 
-      // Accept 10-digit Indian mobile numbers, with or without +91 / spaces / dashes
-      var digits = phone.replace(/[^\d]/g, "");
-      if (digits.length < 10 || digits.length > 13) { setError("lcPhone", true); ok = false; }
+      var whatsapp = normalizeIndianMobile(phoneRaw);
+      if (!whatsapp) { setError("lcPhone", true); ok = false; }
 
-      if (!ok) return;
+      if (email && !isValidEmail(email)) { setError("lcEmail", true); ok = false; }
 
-      // Phase 1: no backend. Close the modal and start the download.
-      var res = current;
-      closeModal();
-      form.reset();
-      if (res) setTimeout(function () { startDownload(res); }, 220);
+      if (!ok || !res) return;
+
+      setSubmitting(true);
+
+      // Shared by both "new lead saved" and "whatsapp already registered"
+      // (23505) outcomes — both are a successful registration from the
+      // visitor's point of view.
+      function completeRegistration(message) {
+        localStorage.setItem(LS_REGISTERED, "true");
+        localStorage.setItem(LS_NAME, name);
+        localStorage.setItem(LS_WHATSAPP, whatsapp);
+
+        showStatus("success", message);
+
+        setTimeout(function () {
+          closeModal();
+          form.reset();
+          startDownload(res);
+        }, 1000);
+      }
+
+      window.MikomiSupabase.saveLead({
+        name: name,
+        whatsapp: whatsapp,
+        email: email,
+        resource: res.title
+      }).then(function () {
+        completeRegistration("🎉 Welcome to Mikomi Learning Center! Your resource is downloading...");
+      }).catch(function (err) {
+        // Same WhatsApp number already exists (unique constraint) —
+        // treat as a returning visitor, not an error.
+        if (err && err.code === "23505") {
+          completeRegistration("Welcome back! Your resource is downloading.");
+          return;
+        }
+
+        var offline = typeof navigator !== "undefined" && navigator.onLine === false;
+        showStatus("error", offline
+          ? "No internet connection. Please check your connection and try again."
+          : "Unable to save your details right now. Please try again.");
+        if (window.console) console.error("Mikomi lead save failed:", err);
+      }).finally(function () {
+        setSubmitting(false);
+      });
     });
   }
 
