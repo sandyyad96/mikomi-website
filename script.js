@@ -239,6 +239,11 @@
     if (y) y.textContent = new Date().getFullYear();
   }
 
+  /* Exposed so pages that inject cards after load (e.g. Learning Center)
+     can re-run the reveal observer over the new elements. */
+  window.MikomiReveal = initReveal;
+  window.MikomiWhatsApp = wireWhatsApp;
+
   /* ---------- Init all ---------- */
   document.addEventListener("DOMContentLoaded", function () {
     wireWhatsApp();

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#E60012" />
+
+  <!-- Primary Meta -->
+  <title>Learning Center | Free Japanese &amp; JLPT N5 Study Material — Mikomi</title>
+  <meta name="description" content="Download free Japanese learning resources from Mikomi Japanese Language Institute — Hiragana &amp; Katakana workbooks, JLPT N5 vocabulary, kanji and a 4-month study planner." />
+  <meta name="keywords" content="free JLPT N5 material, hiragana workbook PDF, katakana workbook, JLPT N5 vocabulary PDF, Japanese study planner, learn Japanese free resources" />
+  <meta name="author" content="Mikomi Japanese Language Institute" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mikomiinstitute.online/learning-center.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mikomi Japanese Language Institute" />
+  <meta property="og:title" content="Learning Center | Free Japanese &amp; JLPT N5 Study Material" />
+  <meta property="og:description" content="Free, professionally curated Japanese study material — workbooks, vocabulary, kanji and study planners." />
+  <meta property="og:url" content="https://mikomiinstitute.online/learning-center.html" />
+  <meta property="og:image" content="https://mikomiinstitute.online/assets/og-image.svg" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Learning Center | Free Japanese Study Material — Mikomi" />
+  <meta name="twitter:description" content="Download free JLPT N5 workbooks, vocabulary, kanji and study planners." />
+  <meta name="twitter:image" content="https://mikomiinstitute.online/assets/og-image.svg" />
+
+  <!-- Favicon & Manifest -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="favicon/favicon-180.png" />
+  <link rel="apple-touch-icon" href="favicon/favicon-180.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles: base design system first, page additions second -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="learning-center.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Mikomi Learning Center",
+    "description": "Free Japanese and JLPT N5 learning resources from Mikomi Japanese Language Institute.",
+    "url": "https://mikomiinstitute.online/learning-center.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Mikomi Japanese Language Institute",
+      "url": "https://mikomiinstitute.online/"
+    },
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Mikomi Japanese Language Institute",
+      "url": "https://mikomiinstitute.online/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Are these resources really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free. Every resource in our Learning Center can be downloaded at no cost — no payment and no subscription required."}},
+      {"@type":"Question","name":"Can complete beginners use these?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. Our Hiragana and Katakana workbooks assume zero prior knowledge and start from the very first character."}},
+      {"@type":"Question","name":"Do I need to join a course to download?","acceptedAnswer":{"@type":"Answer","text":"No. These resources are free for everyone, whether or not you ever enrol with us."}},
+      {"@type":"Question","name":"How do I know which JLPT level I should start with?","acceptedAnswer":{"@type":"Answer","text":"Most learners start at JLPT N5. If you are unsure, message us on WhatsApp and we will help you identify the right level free of charge."}}
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ============ LOADER ============ -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-logo">
+      <img src="images/mikomi-logo.jpg" alt="Mikomi Japanese Language Institute" width="120" height="120" />
+    </div>
+    <p class="loader-text">Where Your Japanese Journey Begins</p>
+  </div>
+
+  <!-- ============ SCROLL PROGRESS ============ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a href="index.html" class="logo" aria-label="Mikomi Japanese Language Institute — home">
+        <img src="images/mikomi-logo.jpg" alt="Mikomi Japanese Language Institute logo" class="logo-img" width="46" height="46" />
+        <span class="logo-text">Mikomi</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#courses">Courses</a></li>
+        <li><a href="index.html#jlpt">JLPT</a></li>
+        <li><a href="learning-center.html" aria-current="page">Learning Center</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="nav-cta-mobile"><a href="#" class="btn btn-primary wa-link">Chat on WhatsApp</a></li>
+      </ul>
+
+      <a href="#" class="btn btn-primary nav-cta wa-link" aria-label="Chat on WhatsApp">
+        <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1-.7.9-.9 1.1-.4.2-.7 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5s0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5H7.5c-.2 0-.5 0-.8.4a3.4 3.4 0 0 0-1 2.5c0 1.5 1 2.9 1.2 3.1s2.2 3.4 5.4 4.7a18 18 0 0 0 1.8.7c.8.2 1.4.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2m0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20"/></svg>
+        Chat on WhatsApp
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HERO ============ -->
+    <section class="lc-hero">
+      <div class="wave-bg" aria-hidden="true"></div>
+      <div class="container">
+        <p class="lc-crumb reveal"><a href="index.html">Home</a> &nbsp;/&nbsp; Learning Center</p>
+        <span class="eyebrow reveal">無料教材 · Free Study Material</span>
+        <h1 class="reveal">Learning <span class="text-accent">Center</span></h1>
+        <p class="lc-hero-sub reveal">Access professionally curated Japanese learning resources from Mikomi Japanese Language Institute. Download free study material to begin your Japanese learning journey.</p>
+        <div class="hero-ctas center-ctas reveal">
+          <a href="#resources" class="btn btn-primary btn-lg">Browse Free Resources</a>
+          <a href="#" class="btn btn-outline btn-lg wa-link">Ask a Question</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <section class="trust-strip" aria-label="Learning Center highlights">
+      <div class="container trust-track">
+        <span>✔ 100% Free Downloads</span>
+        <span>✔ Created by Astha Sensei</span>
+        <span>✔ JLPT Focused</span>
+        <span>✔ Beginner Friendly</span>
+        <span>✔ Instant Access</span>
+      </div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Browse</span>
+          <h2>Resource Categories</h2>
+          <p class="section-lead">Pick a category to filter the resources below.</p>
+        </div>
+        <!-- Category cards are rendered by learning-center.js -->
+        <div class="lc-cat-grid" id="lcCategories"></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED RESOURCES ============ -->
+    <section class="section section-alt" id="resources">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Free Downloads</span>
+          <h2>Featured Resources</h2>
+          <p class="section-lead">Every resource below is free. Tell us where to send it and start learning today.</p>
+        </div>
+        <!-- Resource cards are rendered by learning-center.js -->
+        <div class="lc-res-grid" id="lcResources"></div>
+        <p class="courses-note" id="lcEmpty" style="display:none;">
+          No resources in this category yet — <a href="#" class="wa-link link-accent">ask us on WhatsApp</a> and we'll let you know when they're ready.
+        </p>
+        <p class="courses-note reveal">Looking for something specific? <a href="#" class="wa-link link-accent">Request it on WhatsApp</a> — we build resources based on what students ask for.</p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="lc-faq">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <span class="section-tag">Questions</span>
+          <h2>Frequently Asked</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal"><summary>Are these resources free?</summary><p>Yes, completely free. Every resource in our Learning Center can be downloaded at no cost — no payment and no subscription required.</p></details>
+          <details class="faq-item reveal"><summary>Can beginners use these?</summary><p>Absolutely. Our Hiragana and Katakana workbooks assume zero prior knowledge and start from the very first character, with guided stroke order throughout.</p></details>
+          <details class="faq-item reveal"><summary>Do I need to join a course?</summary><p>No. These resources are free for everyone, whether or not you ever enrol with us. If you'd like structured guidance alongside them, our live classes are always open to you.</p></details>
+          <details class="faq-item reveal"><summary>How do I know my JLPT level?</summary><p>Most learners begin at JLPT N5. If you already know some Japanese and aren't sure where you stand, message us on WhatsApp — we'll help you identify the right level free of charge.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta">
+      <div class="wave-bg dark" aria-hidden="true"></div>
+      <div class="container center reveal">
+        <h2>Need Personal Guidance?</h2>
+        <p>Book a <strong>FREE counselling session</strong> with Astha Sensei.</p>
+        <div class="hero-ctas center-ctas">
+          <a href="#" class="btn btn-white btn-lg wa-link">
+            <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2m0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20"/><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1-.7.9-.9 1.1-.4.2-.7 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5s0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5H7.5c-.2 0-.5 0-.8.4a3.4 3.4 0 0 0-1 2.5c0 1.5 1 2.9 1.2 3.1s2.2 3.4 5.4 4.7a18 18 0 0 0 1.8.7c.8.2 1.4.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <a href="#" class="btn btn-outline-white btn-lg wa-link">Book Free Demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo logo-light"><img src="images/mikomi-logo.jpg" alt="Mikomi Japanese Language Institute logo" class="logo-img" width="46" height="46" /><span class="logo-text">Mikomi</span></a>
+        <p>Mikomi Japanese Language Institute</p>
+        <p class="footer-muted">Online Japanese Classes Across India</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#courses">Courses</a></li>
+          <li><a href="index.html#jlpt">JLPT Roadmap</a></li>
+          <li><a href="learning-center.html">Learning Center</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <div class="footer-social">
+          <a href="#" class="wa-link" aria-label="WhatsApp">💬</a>
+          <a href="https://www.instagram.com/mikomi_institute/" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+          <a href="https://www.facebook.com/MikomiJapaneseInstitute/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+          <a href="https://www.linkedin.com/in/mikomi-japanese-language-institute-7945b630b/" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+        </div>
+        <a href="#" class="btn btn-primary wa-link footer-cta">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="year"></span> Mikomi Japanese Language Institute. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING WHATSAPP ============ -->
+  <a href="#" class="wa-float wa-link" aria-label="Chat with Mikomi on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2m0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20"/><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1-.7.9-.9 1.1-.4.2-.7 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5s0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5H7.5c-.2 0-.5 0-.8.4a3.4 3.4 0 0 0-1 2.5c0 1.5 1 2.9 1.2 3.1s2.2 3.4 5.4 4.7a18 18 0 0 0 1.8.7c.8.2 1.4.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4z"/></svg>
+  </a>
+
+  <!-- ============ BACK TO TOP ============ -->
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <!-- ============ DOWNLOAD MODAL ============ -->
+  <div class="lc-modal-overlay" id="lcModalOverlay" aria-hidden="true"></div>
+  <div class="lc-modal" id="lcModal" role="dialog" aria-modal="true" aria-labelledby="lcModalTitle" aria-hidden="true">
+    <button class="lc-modal-close" id="lcModalClose" aria-label="Close download form">×</button>
+
+    <div class="lc-modal-head">
+      <div class="lc-modal-emoji" aria-hidden="true">📘</div>
+      <h3 id="lcModalTitle">Almost there!</h3>
+      <p>You're downloading <strong id="lcModalResource">this resource</strong>.</p>
+    </div>
+
+    <form id="lcForm" novalidate>
+      <div class="lc-field">
+        <label for="lcName">Name <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="lcName" name="name" placeholder="Your full name" required autocomplete="name" />
+        <span class="lc-error">Please enter your name.</span>
+      </div>
+
+      <div class="lc-field">
+        <label for="lcPhone">WhatsApp Number <span class="req" aria-hidden="true">*</span></label>
+        <input type="tel" id="lcPhone" name="phone" placeholder="e.g. 98765 43210" required autocomplete="tel" inputmode="tel" />
+        <span class="lc-error">Please enter a valid WhatsApp number.</span>
+      </div>
+
+      <div class="lc-field">
+        <label for="lcEmail">Email <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
+        <input type="email" id="lcEmail" name="email" placeholder="you@example.com" autocomplete="email" />
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block btn-lg">⬇ Download PDF</button>
+      <p class="lc-modal-note">Your details stay with Mikomi. We may message you on WhatsApp about your Japanese learning journey.</p>
+    </form>
+  </div>
+
+  <!-- ============ TIMED / EXIT POPUP ============ -->
+  <div class="popup-overlay" id="popupOverlay" aria-hidden="true"></div>
+  <div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true">
+    <button class="popup-close" id="popupClose" aria-label="Close popup">×</button>
+    <div class="popup-emoji">👋</div>
+    <h3 id="popupTitle">Confused about N5 or N4?</h3>
+    <p class="popup-text" id="popupText">Need help choosing your JLPT level? Talk to our counsellor and chat with us instantly.</p>
+    <a href="#" class="btn btn-primary btn-block wa-link">Chat with a Counsellor</a>
+  </div>
+
+  <!-- ============ STICKY MOBILE BAR ============ -->
+  <div class="mobile-bar">
+    <a href="#" class="mobile-bar-btn wa wa-link">
+      <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2m0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20"/></svg>
+      WhatsApp
+    </a>
+    <a href="#" class="mobile-bar-btn demo wa-link">📅 Book Demo</a>
+  </div>
+
+  <!-- Shared behaviour first, page behaviour second -->
+  <script src="script.js"></script>
+  <script src="learning-center.js"></script>
+</body>
+</html>

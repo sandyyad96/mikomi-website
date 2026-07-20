@@ -1,0 +1,258 @@
+/* ============================================================
+   MIKOMI — LEARNING CENTER
+   Additive styles only. Inherits every token, button, heading,
+   card and animation from style.css. Nothing here overrides
+   the existing design system.
+   ============================================================ */
+
+/* ---------- Page hero (inner-page variant of .hero) ---------- */
+.lc-hero {
+  position: relative;
+  padding: 148px 0 72px;
+  background:
+    radial-gradient(900px 460px at 82% -12%, var(--red-soft), transparent 62%),
+    linear-gradient(180deg, #fff, #fff 62%, var(--grey));
+  overflow: hidden;
+  text-align: center;
+}
+.lc-hero .container { position: relative; z-index: 2; }
+.lc-hero h1 { margin-bottom: 1rem; }
+.lc-hero-sub {
+  font-size: 1.08rem;
+  color: var(--muted);
+  max-width: 680px;
+  margin: 0 auto 1.8rem;
+}
+
+/* Breadcrumb */
+.lc-crumb {
+  font-size: .88rem;
+  color: var(--muted);
+  margin-bottom: 1.1rem;
+}
+.lc-crumb a { color: var(--red); font-weight: 500; }
+.lc-crumb a:hover { text-decoration: underline; }
+
+/* ---------- Category chips ---------- */
+.lc-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.1rem;
+}
+.lc-cat {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  font-family: var(--font);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .3s;
+}
+.lc-cat:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.lc-cat.active { border-color: var(--red); box-shadow: var(--shadow-md); }
+.lc-cat-icon {
+  width: 54px; height: 54px; margin: 0 auto .7rem;
+  border-radius: 16px;
+  background: var(--red-soft);
+  display: grid; place-items: center;
+  font-size: 1.6rem;
+}
+.lc-cat h3 { font-size: .95rem; margin-bottom: .15rem; }
+.lc-cat p { font-size: .78rem; color: var(--muted); }
+
+/* ---------- Resource cards ---------- */
+.lc-res-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+.lc-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.lc-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+
+/* Cover */
+.lc-cover {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(150deg, #fdf6ec, #f7e4d7);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.lc-cover img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;   /* keeps the branded top of each PDF cover */
+}
+/* Fallback cover for resources without a rendered PDF cover */
+.lc-cover-glyph {
+  font-family: var(--font-jp);
+  font-size: 4.2rem;
+  color: var(--red-dark);
+  opacity: .9;
+  line-height: 1;
+}
+.lc-cover-glyph small {
+  display: block;
+  font-family: var(--font);
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-top: .6rem;
+  opacity: .85;
+}
+
+/* Badges on cover */
+.lc-badge-free {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--red); color: #fff;
+  font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .32rem .7rem; border-radius: 100px;
+  box-shadow: var(--shadow-red);
+}
+.lc-badge-level {
+  position: absolute; top: 12px; right: 12px;
+  background: rgba(20,17,15,.82); color: #fff;
+  font-size: .68rem; font-weight: 600; letter-spacing: .06em;
+  padding: .32rem .7rem; border-radius: 100px;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+
+/* Card body */
+.lc-card-body {
+  padding: 1.3rem 1.3rem 1.4rem;
+  display: flex; flex-direction: column; flex: 1;
+}
+.lc-card-body h3 { font-size: 1.08rem; margin-bottom: .4rem; }
+.lc-card-desc {
+  font-size: .92rem; color: var(--muted);
+  flex: 1; margin-bottom: 1rem;
+}
+.lc-meta {
+  display: flex; align-items: center; gap: .9rem;
+  font-size: .8rem; color: var(--muted);
+  margin-bottom: 1.1rem;
+}
+.lc-meta span { display: inline-flex; align-items: center; gap: .3rem; }
+
+/* Soon state */
+.lc-card.is-soon .lc-cover { filter: grayscale(.15); }
+.btn[disabled],
+.btn.is-disabled {
+  background: var(--grey-2);
+  color: var(--muted);
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ---------- Download modal ---------- */
+.lc-modal-overlay {
+  position: fixed; inset: 0; z-index: 1600;
+  background: rgba(20,17,15,.5);
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  opacity: 0; visibility: hidden;
+  transition: opacity .3s var(--ease), visibility .3s;
+}
+.lc-modal-overlay.show { opacity: 1; visibility: visible; }
+
+.lc-modal {
+  position: fixed; z-index: 1700;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -46%) scale(.97);
+  width: min(430px, calc(100vw - 32px));
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 2rem 1.7rem 1.6rem;
+  opacity: 0; visibility: hidden;
+  transition: opacity .35s var(--ease), transform .35s var(--ease), visibility .35s;
+}
+.lc-modal.show { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
+
+.lc-modal-close {
+  position: absolute; top: 10px; right: 14px;
+  background: none; border: 0; font-size: 1.7rem; line-height: 1;
+  color: var(--muted); cursor: pointer;
+}
+.lc-modal-close:hover { color: var(--red); }
+
+.lc-modal-head { text-align: center; margin-bottom: 1.3rem; }
+.lc-modal-head .lc-modal-emoji { font-size: 2rem; }
+.lc-modal-head h3 { font-size: 1.2rem; margin: .4rem 0 .3rem; }
+.lc-modal-head p { font-size: .9rem; color: var(--muted); }
+.lc-modal-head strong { color: var(--ink); }
+
+/* Form */
+.lc-field { margin-bottom: 1rem; }
+.lc-field label {
+  display: block; font-size: .85rem; font-weight: 600;
+  margin-bottom: .35rem; color: var(--ink);
+}
+.lc-field .req { color: var(--red); }
+.lc-field input {
+  width: 100%;
+  font-family: var(--font); font-size: .95rem; color: var(--ink);
+  padding: .8rem 1rem;
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: #fff;
+  transition: border-color .25s, box-shadow .25s;
+}
+.lc-field input::placeholder { color: #b3afab; }
+.lc-field input:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(230,0,18,.12);
+}
+.lc-field input[aria-invalid="true"] { border-color: var(--red); }
+.lc-error {
+  display: none;
+  font-size: .78rem; color: var(--red); margin-top: .3rem;
+}
+.lc-field.has-error .lc-error { display: block; }
+
+.lc-modal-note {
+  font-size: .75rem; color: var(--muted);
+  text-align: center; margin-top: .9rem; line-height: 1.5;
+}
+
+/* Focus visibility for keyboard users (matches brand) */
+:focus-visible { outline: 3px solid rgba(230,0,18,.35); outline-offset: 2px; border-radius: 6px; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 980px) {
+  .lc-cat-grid { grid-template-columns: repeat(3, 1fr); }
+  .lc-res-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .lc-hero { padding: 120px 0 56px; }
+  .lc-cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .lc-res-grid { grid-template-columns: 1fr; }
+  .lc-modal { padding: 1.8rem 1.3rem 1.3rem; }
+}
+
+@media (max-width: 420px) {
+  .lc-cat-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lc-card:hover, .lc-cat:hover { transform: none; }
+}
