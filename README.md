@@ -1,6 +1,6 @@
-# Mikomi Japanese Language Institute — Landing Page
+# Mikomi Institute of Japanese Language — Landing Page
 
-A premium, conversion-focused landing page for **Mikomi Japanese Language Institute**. Every CTA is engineered to start a **WhatsApp conversation**. Built with plain HTML, CSS and vanilla JavaScript — zero build step, zero dependencies, deployable directly to **GitHub Pages**.
+A premium, conversion-focused landing page for **Mikomi Institute of Japanese Language**. Every CTA is engineered to start a **WhatsApp conversation**. Built with plain HTML, CSS and vanilla JavaScript — zero build step, zero dependencies, deployable directly to **GitHub Pages**.
 
 ---
 
@@ -63,4 +63,4 @@ No frameworks, no external JS libraries, fonts preconnected, SVG artwork (crisp 
 
 ---
 
-© Mikomi Japanese Language Institute. Online Japanese classes across India.
+© Mikomi Institute of Japanese Language. Online Japanese classes across India.

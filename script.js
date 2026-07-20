@@ -1,5 +1,5 @@
 /* ============================================================
-   MIKOMI JAPANESE LANGUAGE INSTITUTE — script.js
+   MIKOMI INSTITUTE OF JAPANESE LANGUAGE — script.js
    Vanilla JS. No dependencies. GitHub Pages friendly.
    ============================================================ */
 (function () {
