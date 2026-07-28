@@ -67,6 +67,17 @@
       file: null
     },
     {
+      id: "textbook",
+      title: "Minna no Nihongo Textbook",
+      level: "JLPT N5",
+      category: "n5",
+      pages: 331,
+      cover: null,
+      glyph: "本",
+      desc: "The complete, widely-used Minna no Nihongo textbook — grammar, vocabulary and dialogues for structured beginner study.",
+      file: "Resources/minna no nihongo text book latest (1)_compressed.pdf"
+    },
+    {
       id: "planner",
       title: "4-Month JLPT N5 Study Planner",
       level: "All Levels",

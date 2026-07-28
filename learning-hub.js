@@ -71,9 +71,11 @@
       excerpt: "A 6-month, week-by-week study plan covering hiragana, katakana, core vocabulary, grammar and kanji — with free downloadable resources.",
       category: "jlpt",
       tags: ["jlpt n5", "study plan", "hiragana", "katakana"],
-      readingTime: "13 min read",
+      readingTime: "6 min read",
+      published: "28 Jul 2026",
+      updated: "28 Jul 2026",
       glyph: "学",
-      file: null,
+      file: "blog/jlpt-n5-complete-roadmap.html",
       trending: true
     },
     {
