@@ -45,9 +45,11 @@
       excerpt: "Eligibility, industries, salary ranges, the language and skills exams, and how the Specified Skilled Worker visa compares with TITP.",
       category: "visa",
       tags: ["ssw visa", "specified skilled worker", "visa"],
-      readingTime: "12 min read",
+      readingTime: "7 min read",
+      published: "28 Jul 2026",
+      updated: "28 Jul 2026",
       glyph: "査",
-      file: null,
+      file: "blog/ssw-visa-explained-for-indians.html",
       trending: true
     },
     {
