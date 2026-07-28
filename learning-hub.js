@@ -58,9 +58,11 @@
       excerpt: "A side-by-side comparison of career growth, salary, path to permanent residency, and Japanese language requirements across all three routes.",
       category: "visa",
       tags: ["engineer visa", "ssw", "titp", "comparison"],
-      readingTime: "11 min read",
+      readingTime: "5 min read",
+      published: "28 Jul 2026",
+      updated: "28 Jul 2026",
       glyph: "比",
-      file: null,
+      file: "blog/engineer-vs-ssw-vs-titp.html",
       trending: false
     },
     {
