@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  MIKOMI LEARNING HUB — REUSABLE ARTICLE TEMPLATE
+  ============================================================
+  HOW TO USE THIS FILE
+  1. Copy it into blog/ and rename to your-article-slug.html
+  2. Replace every {{PLACEHOLDER}} — search for double curly braces
+  3. Update the <title>, meta tags, canonical URL and JSON-LD block
+  4. Add this article's entry to the ARTICLES array in
+     ../learning-hub.js so it appears on the Learning Hub page
+  5. Set the previous article's "Next" pager card to point here,
+     and set this article's "Previous" pager card
+  6. Add the new URL to ../sitemap.xml
+  7. Delete this instructional comment block before publishing
+  This file itself should stay out of the sitemap and carries a
+  noindex tag — it is a template, not a real page.
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#E60012" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Primary Meta -->
+  <title>{{SEO_TITLE}} — Mikomi Learning Hub</title>
+  <meta name="description" content="{{META_DESCRIPTION}}" />
+  <meta name="keywords" content="{{PRIMARY_KEYWORD}}, {{SECONDARY_KEYWORD_1}}, {{SECONDARY_KEYWORD_2}}" />
+  <meta name="author" content="{{AUTHOR_NAME}}" />
+  <link rel="canonical" href="https://mikomiinstitute.online/blog/{{SLUG}}.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Mikomi Institute of Japanese Language" />
+  <meta property="og:title" content="{{OG_TITLE}}" />
+  <meta property="og:description" content="{{OG_DESCRIPTION}}" />
+  <meta property="og:url" content="https://mikomiinstitute.online/blog/{{SLUG}}.html" />
+  <meta property="og:image" content="https://mikomiinstitute.online/images/blog/{{SLUG}}/hero-banner.jpg" />
+  <meta property="article:published_time" content="{{PUBLISHED_ISO}}" />
+  <meta property="article:modified_time" content="{{UPDATED_ISO}}" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{OG_TITLE}}" />
+  <meta name="twitter:description" content="{{OG_DESCRIPTION}}" />
+  <meta name="twitter:image" content="https://mikomiinstitute.online/images/blog/{{SLUG}}/hero-banner.jpg" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="../favicon/favicon-180.png" />
+  <link rel="apple-touch-icon" href="../favicon/favicon-180.png" />
+  <link rel="manifest" href="../manifest.json" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../blog.css" />
+
+  <!-- Structured Data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{SEO_TITLE}}",
+    "description": "{{META_DESCRIPTION}}",
+    "image": "https://mikomiinstitute.online/images/blog/{{SLUG}}/hero-banner.jpg",
+    "author": { "@type": "Person", "name": "{{AUTHOR_NAME}}", "jobTitle": "{{AUTHOR_ROLE}}" },
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "Mikomi Institute of Japanese Language",
+      "logo": { "@type": "ImageObject", "url": "https://mikomiinstitute.online/images/mikomi-logo.jpg" }
+    },
+    "datePublished": "{{PUBLISHED_ISO}}",
+    "dateModified": "{{UPDATED_ISO}}",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://mikomiinstitute.online/blog/{{SLUG}}.html" }
+  }
+  </script>
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mikomiinstitute.online/" },
+      { "@type": "ListItem", "position": 2, "name": "Learning Hub", "item": "https://mikomiinstitute.online/learning-hub.html" },
+      { "@type": "ListItem", "position": 3, "name": "{{ARTICLE_TITLE}}", "item": "https://mikomiinstitute.online/blog/{{SLUG}}.html" }
+    ]
+  }
+  </script>
+  <!-- Structured Data: FAQPage — keep in sync with the FAQ section below -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "{{FAQ_Q1}}", "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ_A1}}" } }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-logo"><img src="../images/mikomi-logo.jpg" alt="Mikomi Institute of Japanese Language" width="120" height="120" /></div>
+    <p class="loader-text">Where Your Japanese Journey Begins</p>
+  </div>
+
+  <div id="articleProgress" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a href="../index.html" class="logo" aria-label="Mikomi Institute of Japanese Language — home">
+        <img src="../images/mikomi-logo.jpg" alt="Mikomi Institute of Japanese Language logo" class="logo-img" width="46" height="46" />
+        <span class="logo-text">Mikomi</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#courses">Courses</a></li>
+        <li><a href="../index.html#jlpt">JLPT</a></li>
+        <li><a href="../learning-center.html">Downloads</a></li>
+        <li><a href="../learning-hub.html">Career Guides</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li class="nav-cta-mobile"><a href="#" class="btn btn-primary wa-link">Chat on WhatsApp</a></li>
+      </ul>
+      <a href="#" class="btn btn-primary nav-cta wa-link" aria-label="Chat on WhatsApp">
+        <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1-.7.9-.9 1.1-.4.2-.7 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5s0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5H7.5c-.2 0-.5 0-.8.4a3.4 3.4 0 0 0-1 2.5c0 1.5 1 2.9 1.2 3.1s2.2 3.4 5.4 4.7a18 18 0 0 0 1.8.7c.8.2 1.4.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2m0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20"/></svg>
+        Chat on WhatsApp
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ ARTICLE HERO ============ -->
+    <section class="article-hero">
+      <div class="container">
+        <p class="article-crumb">
+          <a href="../index.html">Home</a><span class="sep">/</span>
+          <a href="../learning-hub.html">Learning Hub</a><span class="sep">/</span>
+          <span class="current">{{ARTICLE_TITLE}}</span>
+        </p>
+        <span class="article-cat-badge">{{CATEGORY_NAME}}</span>
+        <h1>{{ARTICLE_TITLE}}</h1>
+        <p class="article-dek">{{ARTICLE_DEK}}</p>
+
+        <div class="article-meta-row">
+          <span class="article-meta-author">
+            <span class="article-meta-avatar"><img src="../images/founder_portrait_640x800.jpg" alt="{{AUTHOR_NAME}}" /></span>
+            {{AUTHOR_NAME}}, {{AUTHOR_ROLE}}
+          </span>
+          <span>⏱ {{READING_TIME}}</span>
+          <span>📅 Published {{PUBLISHED_DISPLAY}}</span>
+          <span>🔄 Updated {{UPDATED_DISPLAY}}</span>
+        </div>
+
+        <!-- TEMPLATE: replace with a real hero illustration once generated.
+             See the image-prompt list for this article for the exact
+             AI-generation prompt, aspect ratio and alt text to use. -->
+        <div class="article-hero-cover">
+          <img src="../images/blog/{{SLUG}}/hero-banner.jpg" alt="{{HERO_IMAGE_ALT}}" width="1600" height="900" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHELL: TOC + CONTENT ============ -->
+    <div class="container">
+      <div class="article-shell">
+        <!-- Sticky Table of Contents -->
+        <aside class="article-toc" id="articleToc" aria-label="Table of contents">
+          <button class="article-toc-toggle" type="button">On This Page</button>
+          <h4 class="toc-heading-desktop">On This Page</h4>
+          <ol>
+            <li><a href="#section-1">{{H2_1_TEXT}}</a></li>
+            <li><a href="#section-2">{{H2_2_TEXT}}</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </aside>
+
+        <!-- Article content -->
+        <article class="article-content">
+
+          <h2 id="section-1">{{H2_1_TEXT}}</h2>
+          <p>{{PARAGRAPH}}</p>
+
+          <blockquote class="pull-quote">
+            {{PULL_QUOTE_TEXT}}
+            <cite>— {{AUTHOR_NAME}}, {{AUTHOR_ROLE}}</cite>
+          </blockquote>
+
+          <div class="callout callout-tip">
+            <span class="callout-icon">💡</span>
+            <div><h4>{{TIP_TITLE}}</h4><p>{{TIP_BODY}}</p></div>
+          </div>
+
+          <div class="callout callout-warning">
+            <span class="callout-icon">⚠️</span>
+            <div><h4>{{WARNING_TITLE}}</h4><p>{{WARNING_BODY}}</p></div>
+          </div>
+
+          <h2 id="section-2">{{H2_2_TEXT}}</h2>
+          <p>{{PARAGRAPH}}</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>{{COL_1}}</th><th>{{COL_2}}</th><th>{{COL_3}}</th></tr></thead>
+              <tbody>
+                <tr><td>{{ROW}}</td><td>{{ROW}}</td><td>{{ROW}}</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-step"><span class="timeline-dot">1</span><h4>{{STEP_TITLE}}</h4><p>{{STEP_BODY}}</p></div>
+            <div class="timeline-step"><span class="timeline-dot">2</span><h4>{{STEP_TITLE}}</h4><p>{{STEP_BODY}}</p></div>
+          </div>
+
+          <div class="inline-cta">
+            <p><strong>{{CTA_HEADLINE}}</strong><br>{{CTA_SUBTEXT}}</p>
+            <a href="#" class="btn btn-primary wa-link">Chat on WhatsApp</a>
+          </div>
+
+          <h2 id="faq">Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <details class="faq-item"><summary>{{FAQ_Q1}}</summary><p>{{FAQ_A1}}</p></details>
+          </div>
+
+          <!-- Author card -->
+          <div class="author-card">
+            <div class="author-avatar"><img src="../images/founder_portrait_640x800.jpg" alt="{{AUTHOR_NAME}}" /></div>
+            <div>
+              <h4>{{AUTHOR_NAME}}</h4>
+              <p class="author-role">{{AUTHOR_ROLE}}</p>
+              <p>{{AUTHOR_BIO}}</p>
+            </div>
+          </div>
+
+          <!-- Share bar -->
+          <div class="share-bar">
+            <span class="share-label">Share this guide:</span>
+            <a class="share-btn wa" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2m0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20"/></svg></a>
+            <a class="share-btn tw" href="#" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22H16.9l-5-6.5-5.7 6.5H2.9l8.1-9.3L2 2h6.6l4.5 6 5.8-6Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"/></svg></a>
+            <a class="share-btn li" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.87V21h-4V9Z"/></svg></a>
+            <a class="share-btn fb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.9h2.66l.4-3.1h-3.06V8.1c0-.9.25-1.5 1.55-1.5h1.65V3.8C15.8 3.75 14.85 3.66 13.74 3.66c-2.3 0-3.9 1.4-3.9 4v2.34H7.17v3.1h2.67V21h3.66Z"/></svg></a>
+            <button class="share-btn copy" type="button">Copy</button>
+          </div>
+
+          <!-- Prev / Next -->
+          <nav class="article-pagination" aria-label="Article navigation">
+            <a href="#" class="pager-card pager-prev"><small>← Previous</small><span>{{PREV_TITLE}}</span></a>
+            <a href="#" class="pager-card pager-next"><small>Next →</small><span>{{NEXT_TITLE}}</span></a>
+          </nav>
+        </article>
+      </div>
+    </div>
+
+    <!-- ============ RELATED ============ -->
+    <section class="related-section">
+      <div class="container">
+        <div class="section-head reveal"><span class="section-tag">Keep Learning</span><h2>Related Guides &amp; Resources</h2></div>
+        <div class="related-grid">
+          <a href="../learning-hub.html" class="related-card"><span class="rel-glyph">学</span><h4>{{RELATED_TITLE}}</h4><small>{{RELATED_META}}</small></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="article-cta reveal">
+          <h2>{{FINAL_CTA_HEADLINE}}</h2>
+          <p>{{FINAL_CTA_SUBTEXT}}</p>
+          <div class="hero-ctas center-ctas">
+            <a href="#" class="btn btn-white btn-lg wa-link">Book a Free Demo</a>
+            <a href="../learning-center.html" class="btn btn-outline-white btn-lg">Download Free Resources</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo logo-light"><img src="../images/mikomi-logo.jpg" alt="Mikomi Institute of Japanese Language logo" class="logo-img" width="46" height="46" /><span class="logo-text">Mikomi</span></a>
+        <p>Mikomi Institute of Japanese Language</p>
+        <p class="footer-muted">Online Japanese Classes Across India</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html#courses">Courses</a></li>
+          <li><a href="../index.html#jlpt">JLPT Roadmap</a></li>
+          <li><a href="../learning-center.html">Learning Center</a></li>
+          <li><a href="../learning-hub.html">Learning Hub</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <div class="footer-social">
+          <a href="#" class="wa-link" aria-label="WhatsApp">💬</a>
+          <a href="https://www.instagram.com/mikomi_institute/" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+          <a href="https://www.facebook.com/MikomiJapaneseInstitute/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+          <a href="https://www.linkedin.com/in/mikomi-japanese-language-institute-7945b630b/" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+        </div>
+        <a href="#" class="btn btn-primary wa-link footer-cta">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>© <span id="year"></span> Mikomi Institute of Japanese Language. All rights reserved.</p></div></div>
+  </footer>
+
+  <a href="#" class="wa-float wa-link" aria-label="Chat with Mikomi on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2m0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20"/><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.1-.7.9-.9 1.1-.4.2-.7 0a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5s0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5H7.5c-.2 0-.5 0-.8.4a3.4 3.4 0 0 0-1 2.5c0 1.5 1 2.9 1.2 3.1s2.2 3.4 5.4 4.7a18 18 0 0 0 1.8.7c.8.2 1.4.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4z"/></svg>
+  </a>
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <div class="popup-overlay" id="popupOverlay" aria-hidden="true"></div>
+  <div class="popup" id="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true">
+    <button class="popup-close" id="popupClose" aria-label="Close popup">×</button>
+    <div class="popup-emoji">👋</div>
+    <h3 id="popupTitle">Not sure where to start?</h3>
+    <p class="popup-text">Talk to our counsellor and get a free, personalised roadmap.</p>
+    <a href="#" class="btn btn-primary btn-block wa-link">Chat with a Counsellor</a>
+  </div>
+
+  <div class="mobile-bar">
+    <a href="#" class="mobile-bar-btn wa wa-link"><svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2m0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20"/></svg>WhatsApp</a>
+    <a href="#" class="mobile-bar-btn demo wa-link">📅 Book Demo</a>
+  </div>
+
+  <script src="../script.js"></script>
+  <script src="../blog.js"></script>
+</body>
+</html>
