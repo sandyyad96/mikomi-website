@@ -81,12 +81,14 @@
     {
       id: "government-schemes-japan",
       title: "Government Schemes to Work in Japan",
-      excerpt: "An overview of central and state-supported overseas employment initiatives relevant to Japan-bound candidates, with eligibility and how to verify current details.",
+      excerpt: "What 'government scheme' actually means for Japan-bound candidates, the real bilateral frameworks involved, and how to verify current details and avoid fraudulent agents.",
       category: "jobs",
       tags: ["government scheme", "overseas employment", "ssw"],
-      readingTime: "10 min read",
+      readingTime: "5 min read",
+      published: "29 Jul 2026",
+      updated: "29 Jul 2026",
       glyph: "政",
-      file: null,
+      file: "blog/government-schemes-to-work-in-japan.html",
       trending: false
     },
     {
