@@ -134,10 +134,12 @@
       excerpt: "Common interview questions in Japanese, romaji and English, with sample answers and Japanese business etiquette tips.",
       category: "career",
       tags: ["interview questions", "business etiquette", "keigo"],
-      readingTime: "9 min read",
+      readingTime: "11 min read",
+      published: "29 Jul 2026",
+      updated: "29 Jul 2026",
       glyph: "話",
-      file: null,
-      trending: false
+      file: "blog/top-japanese-interview-questions.html",
+      trending: true
     },
     {
       id: "common-mistakes-learning-japanese",
@@ -145,10 +147,12 @@
       excerpt: "Practical, example-driven fixes for the pronunciation, grammar and study-habit mistakes that slow Indian learners down most.",
       category: "jlpt",
       tags: ["common mistakes", "learn japanese", "study tips"],
-      readingTime: "10 min read",
+      readingTime: "9 min read",
+      published: "29 Jul 2026",
+      updated: "29 Jul 2026",
       glyph: "誤",
-      file: null,
-      trending: false
+      file: "blog/20-common-mistakes-indians-make-learning-japanese.html",
+      trending: true
     }
   ];
 
