@@ -97,9 +97,11 @@
       excerpt: "Engineer, IT, hotel, factory, caregiver, restaurant, construction and agriculture pay ranges, plus taxes, savings potential and cost of living.",
       category: "salary",
       tags: ["salary in japan", "wages", "savings"],
-      readingTime: "12 min read",
+      readingTime: "5 min read",
+      published: "29 Jul 2026",
+      updated: "29 Jul 2026",
       glyph: "給",
-      file: null,
+      file: "blog/salary-in-japan-for-indians.html",
       trending: true
     },
     {
