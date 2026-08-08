@@ -46,25 +46,25 @@
     },
     {
       id: "kanji",
-      title: "JLPT N5 Kanji Book",
+      title: "JLPT N5 Kanji Handbook",
       level: "JLPT N5",
       category: "n5",
-      pages: 162,
+      pages: 33,
       cover: null,
       glyph: "漢",
-      desc: "Every kanji required for JLPT N5, with readings, meanings and practice grids.",
-      file: "Resources/N5 Kanji Book (1).pdf"
+      desc: "94 essential N5 kanji across 8 logical groups, with readings, meanings and stroke guidance.",
+      file: "Resources/Mikomi_JLPT_N5_Kanji_Handbook.pdf"
     },
     {
       id: "grammar",
-      title: "JLPT N5 Grammar Guide",
+      title: "JLPT N5 Grammar Handbook",
       level: "JLPT N5",
-      category: "cheatsheets",
-      pages: null,
+      category: "n5",
+      pages: 29,
       cover: null,
       glyph: "文",
-      desc: "Every core N5 grammar pattern explained simply, with example sentences.",
-      file: null
+      desc: "40 essential N5 grammar points across 9 chapters, explained simply with example sentences.",
+      file: "Resources/Mikomi_JLPT_N5_Grammar_Handbook.pdf"
     },
     {
       id: "textbook",
