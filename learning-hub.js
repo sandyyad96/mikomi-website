@@ -110,9 +110,11 @@
       excerpt: "Tokyo, Osaka, Nagoya and Fukuoka compared — rent, transport, food, internet, electricity and realistic monthly budgets.",
       category: "salary",
       tags: ["cost of living", "tokyo", "osaka", "budget"],
-      readingTime: "11 min read",
+      readingTime: "4 min read",
+      published: "29 Jul 2026",
+      updated: "29 Jul 2026",
       glyph: "生",
-      file: null,
+      file: "blog/cost-of-living-in-japan.html",
       trending: false
     },
     {
